@@ -30,10 +30,14 @@ function LearningWrapper() {
   return (
     <div>
       Learning: {deckId} {deck.name} {deck.description}
-      <Flashcard
-        question={flashcards[0].question}
-        answer={flashcards[0].answer}
-      />
+      {flashcards.length !== 0 ? (
+        <Flashcard
+          question={flashcards[0].question}
+          answer={flashcards[0].answer}
+        />
+      ) : (
+        <p>Flashcards not found!</p>
+      )}
     </div>
   );
 }
